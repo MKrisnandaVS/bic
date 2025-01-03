@@ -70,18 +70,6 @@
         font-family: "Delius";
       }
     </style>
-    <!-- Darkmode -->
-    <script>
-      if (
-        localStorage.getItem("theme") === "dark" ||
-        (!localStorage.getItem("theme") &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    </script>
     <!-- Tittle -->
     <title>SDIT BIC KOTA PASURUAN</title>
   </head>
@@ -161,54 +149,6 @@
                     >Contact</a
                   >
                 </li>
-                <li class="flex items-center pl-8 mt-5 lg:mt-0">
-                  <div class="flex items-center">
-                    <!-- Logo Matahari -->
-                    <svg
-                      class="mr-2 h-6 w-6"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 48 48"
-                    >
-                      <path fill="#FF9800" d="M11 11H37V37H11z"></path>
-                      <path
-                        fill="#FF9800"
-                        d="M11.272 11.272H36.728V36.728H11.272z"
-                        transform="rotate(-45.001 24 24)"
-                      ></path>
-                      <path
-                        fill="#FFEB3B"
-                        d="M13,24c0,6.077,4.923,11,11,11c6.076,0,11-4.923,11-11s-4.924-11-11-11C17.923,13,13,17.923,13,24"
-                      ></path>
-                    </svg>
-
-                    <input type="checkbox" id="dark-toggle" class="hidden" />
-                    <label for="dark-toggle">
-                      <div
-                        class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1"
-                      >
-                        <div
-                          class="toggle-circle h-4 w-4 bg-white rounded-full transition duration-300 ease-in-out"
-                        ></div>
-                      </div>
-                    </label>
-
-                    <!-- Logo Bulan -->
-                    <svg
-                      class="ml-2 h-6 w-6 text-blue-500"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"
-                      />
-                    </svg>
-                  </div>
-                </li>
               </ul>
             </nav>
           </div>
@@ -263,7 +203,9 @@
             <h3 class="font-bold uppercase text-primary text-xl mb-3">
               Kata Sambutan
             </h3>
-            <p class="font-medium text-base text-secondary max-w-xl text-justify">
+            <p
+              class="font-medium text-base text-secondary max-w-xl text-justify"
+            >
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum
               explicabo numquam voluptatibus tempora magni pariatur provident
               aut eveniet dolore. Quisquam quis voluptas dolorem ipsum quod
@@ -271,10 +213,13 @@
               numquam, quasi nisi illum voluptatem. Libero, minus tempora quae
               velit consequuntur eveniet officia suscipit atque mollitia!
             </p>
-
           </div>
           <div class="w-full px-4 lg:w-1/2">
-            <img src="/img/butititk.png" alt="Foto Sambutan" class="rounded-lg" />
+            <img
+              src="/img/butititk.png"
+              alt="Foto Sambutan"
+              class="rounded-lg"
+            />
           </div>
         </div>
       </div>
@@ -393,11 +338,11 @@
         </div>
         <div class="flex justify-center items-center">
           <a
-              href="https://www.instagram.com/sditbicpasuruan/"
-              target="_blank"
-              class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:opacity-80 transition duration-300 ease-in-out"
-              >Lihat Selengkapnya</a
-            >
+            href="https://www.instagram.com/sditbicpasuruan/"
+            target="_blank"
+            class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:opacity-80 transition duration-300 ease-in-out"
+            >Lihat Selengkapnya</a
+          >
         </div>
       </div>
     </section>
