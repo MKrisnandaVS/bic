@@ -56,3 +56,52 @@ if (
 } else {
   darkToggle.checked = false;
 }
+
+
+// coba
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.getElementById("slider");
+  const prevButton = document.getElementById("prev");
+  const nextButton = document.getElementById("next");
+
+  let currentIndex = 0;
+  const slideWidth = slider.children[0].offsetWidth; // Lebar setiap slide
+  const totalSlides = slider.children.length; // Total jumlah slide
+  const maxIndex = Math.max(0, totalSlides - 3); // Indeks maksimum (sisa slide setelah tampil 3)
+
+  // Fungsi untuk memperbarui posisi slider
+  const updateSliderPosition = () => {
+    slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  };
+
+  // Fungsi untuk mengaktifkan/mematikan tombol navigasi
+  const updateButtonState = () => {
+    prevButton.disabled = currentIndex === 0;
+    nextButton.disabled = currentIndex === maxIndex;
+    prevButton.classList.toggle("opacity-50", currentIndex === 0);
+    nextButton.classList.toggle("opacity-50", currentIndex === maxIndex);
+  };
+
+  // Klik tombol "Previous"
+  prevButton.addEventListener("click", () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSliderPosition();
+      updateButtonState();
+    }
+  });
+
+  // Klik tombol "Next"
+  nextButton.addEventListener("click", () => {
+    if (currentIndex < maxIndex) {
+      currentIndex++;
+      updateSliderPosition();
+      updateButtonState();
+    }
+  });
+
+  // Inisialisasi
+  updateSliderPosition();
+  updateButtonState();
+});
+
