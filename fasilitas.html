@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwindcss Config -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          container: {
+            center: true,
+            padding: "16px",
+          },
+          extend: {
+            colors: {
+              primary: "#f97316",
+              secondary: "#64748b",
+              dark: "#0f172a",
+            },
+            screens: {
+              "2xl": "1320px",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- CSS Config -->
+    <style type="text/tailwindcss">
+      /* Hamburger Start */
+      .hamburger-line {
+        @apply w-[30px] h-[2px] my-2 block bg-dark dark:bg-white;
+      }
+
+      .hamburger-active > span:nth-child(1) {
+        @apply rotate-45;
+      }
+      .hamburger-active > span:nth-child(2) {
+        @apply scale-0;
+      }
+      .hamburger-active > span:nth-child(3) {
+        @apply -rotate-45;
+      }
+      /* Hamburger End */
+
+      /* Navbar Start */
+      .navbar-fixed {
+        @apply fixed z-[9999] bg-white bg-opacity-70 dark:bg-opacity-70;
+        backdrop-filter: blur(5px);
+        box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.2);
+      }
+      /* Navbar End */
+
+      /* Dark-Toggle */
+      #dark-toggle:checked + label div.toggle-circle {
+        @apply translate-x-3;
+      }
+
+      /* Body */
+      body {
+        font-family: "Poppins";
+      }
+    </style>
+    <!-- Tittle -->
+    <title>SDIT BIC KOTA PASURUAN</title>
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header
+      class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10"
+    >
+      <div class="container">
+        <div class="flex items-center justify-between relative">
+          <div class="px-4">
+            <a href="#home">
+              <img
+                src="/img/bic.png"
+                alt="logo"
+                class="mt-1 mb-1 h-10 sm:h-12 md:h-16 w-auto"
+              />
+            </a>
+          </div>
+          <div class="flex items-center px-4">
+            <button
+              id="hamburger"
+              name="hamburger"
+              type="button"
+              class="block absolute right-4 lg:hidden"
+            >
+              <span
+                class="origin-top-left hamburger-line transition duration-300 ease-in-out"
+              ></span>
+              <span
+                class="hamburger-line transition duration-300 ease-in-out"
+              ></span>
+              <span
+                class="origin-bottom-left hamburger-line transition duration-300 ease-in-out"
+              ></span>
+            </button>
+            <nav
+              id="nav-menu"
+              class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:shadow-slate-500 lg:dark:bg-transparent"
+            >
+              <ul class="block lg:flex">
+                <li class="group">
+                  <a
+                    href="/index.html"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary"
+                    >Beranda</a
+                  >
+                </li>
+                <li class="group"></li>
+                <li class="group relative">
+                  <a
+                    href="#home"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary"
+                    >Tentang SDIT BIC</a
+                  >
+                  <ul
+                    class="absolute left-0 hidden group-hover:block bg-white shadow-lg"
+                  >
+                    <li>
+                      <a
+                        href="#subitem1"
+                        class="block text-base text-dark py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700"
+                        >Sejarah Sekolah</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#subitem2"
+                        class="block text-base text-dark py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700"
+                        >Visi Misi</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#subitem3"
+                        class="block text-base text-dark py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700"
+                        >Peraturan Akademik</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="group">
+                  <a
+                    href="#prestasi"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary"
+                    >Prestasi</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#clients"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary"
+                    >Clients</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#blog"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary"
+                    >Blog</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#contact"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Fasilitas Start -->
+    <section id="fasilitas" class="pt-36 pb-16">
+      <div class="container">
+        <div class="w-full px-4">
+          <div class="max-w-xl mx-auto text-center mb-16">
+            <h2
+              class="font-bold text-dark text-3xl sm:text-4xl xl:text-5xl"
+            >
+              Fasilitas
+            </h2>
+          </div>
+        </div>
+
+        <div class="w-full px-4 flex flex-wrap justify-center xl:mx-auto">
+          <div class="mb-12 p-4 md:w-1/3 sm:w-1/2">
+            <div class="rounded-md shadow-md overflow-hidden">
+              <img
+                src="/img/pretasi/Screenshot from 2025-01-03 19-59-36.png"
+                alt=""
+                width="w-full"
+              />
+            </div>
+            <h3
+              class="font-semibold text-dark text-xl mt-5 mb-3"
+            >
+              Ini Adalah Contoh Fasilitas
+            </h3>
+            <p class="font-medium text-base text-secondary">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+              dolore nostrum esse, ad recusandae vitae!
+            </p>
+          </div>
+          <div class="mb-12 p-4 md:w-1/3 sm:w-1/2">
+            <div class="rounded-md shadow-md overflow-hidden">
+              <img
+                src="/img/pretasi/Screenshot from 2025-01-03 19-59-36.png"
+                alt=""
+                width="w-full"
+              />
+            </div>
+            <h3
+              class="font-semibold text-dark text-xl mt-5 mb-3"
+            >
+              Ini Adalah Contoh Fasilitas
+            </h3>
+            <p class="font-medium text-base text-secondary">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+              dolore nostrum esse, ad recusandae vitae!
+            </p>
+          </div>
+          <div class="mb-12 p-4 md:w-1/3 sm:w-1/2">
+            <div class="rounded-md shadow-md overflow-hidden">
+              <img
+                src="/img/pretasi/Screenshot from 2025-01-03 19-59-36.png"
+                alt=""
+                width="w-full"
+              />
+            </div>
+            <h3
+              class="font-semibold text-dark text-xl mt-5 mb-3"
+            >
+              Ini Adalah Contoh Fasilitas
+            </h3>
+            <p class="font-medium text-base text-secondary">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+              dolore nostrum esse, ad recusandae vitae!
+            </p>
+          </div>
+          <div class="mb-12 p-4 md:w-1/3 sm:w-1/2">
+            <div class="rounded-md shadow-md overflow-hidden">
+              <img
+                src="/img/pretasi/Screenshot from 2025-01-03 19-59-36.png"
+                alt=""
+                width="w-full"
+              />
+            </div>
+            <h3
+              class="font-semibold text-dark text-xl mt-5 mb-3"
+            >
+              Ini Adalah Contoh Fasilitas
+            </h3>
+            <p class="font-medium text-base text-secondary">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+              dolore nostrum esse, ad recusandae vitae!
+            </p>
+          </div>
+          <div class="mb-12 p-4 md:w-1/3 sm:w-1/2">
+            <div class="rounded-md shadow-md overflow-hidden">
+              <img
+                src="/img/pretasi/Screenshot from 2025-01-03 19-59-36.png"
+                alt=""
+                width="w-full"
+              />
+            </div>
+            <h3
+              class="font-semibold text-dark text-xl mt-5 mb-3"
+            >
+              Ini Adalah Contoh Fasilitas
+            </h3>
+            <p class="font-medium text-base text-secondary">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+              dolore nostrum esse, ad recusandae vitae!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Fasilitas End -->
+
+    <!-- Footer Start -->
+    <section>
+      <footer class="bg-dark pt-5 pb-5">
+        <div class="container">
+          <p class="text-slate-500 font-medium text-sm text-center">
+            created by <span class="text-primary">MKrisnandaVS</span>
+          </p>
+        </div>
+      </footer>
+    </section>
+    <!-- Footer End -->
+
+    <!-- Back to Top Start -->
+    <a
+      href="#prestasi"
+      class="hidden w-14 h-14 bg-primary rounded-full fixed z-[9999] bottom-4 right-4 p-4 justify-center items-center hover:transition hover duration-300 hover:animate-pulse"
+      id="to-top"
+    >
+      <span class="block w-5 h-5 border-t-2 border-l rotate-45 mt-3"></span>
+    </a>
+    <!-- Back to Top End -->
+
+    <!-- JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
