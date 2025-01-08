@@ -75,7 +75,6 @@
     <title>SDIT BIC</title>
   </head>
   <body>
-    <!-- Header Start -->
     <header
       class="bg-transparent absolute top-0 left-0 w-full flex items-center z-[9999]"
     >
@@ -119,15 +118,15 @@
                     >Beranda</a
                   >
                 </li>
-                <li class="group"></li>
                 <li class="group relative">
                   <a
                     href="#"
                     class="flex text-base text-dark py-2 mx-8 group-hover:text-primary"
                     >Tentang SDIT BIC</a
                   >
+                  <!-- Submenu -->
                   <ul
-                    class="absolute left-0 hidden group-hover:block bg-white shadow-lg"
+                    class="absolute left-0 bg-white shadow-lg opacity-0 invisible translate-y-2 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
                   >
                     <li>
                       <a
@@ -193,7 +192,6 @@
         </div>
       </div>
     </header>
-    <!-- Header End -->
 
     <!-- Hero Section Start -->
     <section id="home" class="pt-[90px]">
@@ -403,7 +401,7 @@
             <h2
               class="font-bold text-dark text-3xl mb-4 sm:text-4xl xl:text-5xl"
             >
-             Pengumuman dan Berita
+              Pengumuman dan Berita
             </h2>
           </div>
         </div>
