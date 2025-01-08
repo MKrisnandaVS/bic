@@ -26,11 +26,20 @@ hamburger.addEventListener("click", function () {
 
 // Klik luar hamburger
 window.addEventListener("click", function (e) {
-  if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("nav-menu");
+
+  if (
+    hamburger && 
+    navMenu && 
+    !hamburger.contains(e.target) && 
+    !navMenu.contains(e.target)
+  ) {
     hamburger.classList.remove("hamburger-active");
     navMenu.classList.add("hidden");
   }
 });
+
 
 // Darkmode Toggle
 const darkToggle = document.querySelector("#dark-toggle");
