@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwindcss Config -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          container: {
+            center: true,
+            padding: "16px",
+          },
+          extend: {
+            colors: {
+              primary: "#f97316",
+              secondary: "#64748b",
+              dark: "#0f172a",
+            },
+            screens: {
+              "2xl": "1320px",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- CSS Config -->
+    <style type="text/tailwindcss">
+      /* Hamburger Start */
+      .hamburger-line {
+        @apply w-[30px] h-[2px] my-2 block bg-dark dark:bg-white;
+      }
+
+      .hamburger-active > span:nth-child(1) {
+        @apply rotate-45;
+      }
+      .hamburger-active > span:nth-child(2) {
+        @apply scale-0;
+      }
+      .hamburger-active > span:nth-child(3) {
+        @apply -rotate-45;
+      }
+      /* Hamburger End */
+
+      /* Navbar Start */
+      .navbar-fixed {
+        @apply fixed z-[9999] bg-white bg-opacity-70 dark:bg-opacity-70;
+        backdrop-filter: blur(5px);
+        box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.2);
+      }
+      /* Navbar End */
+
+      /* Dark-Toggle */
+      #dark-toggle:checked + label div.toggle-circle {
+        @apply translate-x-3;
+      }
+
+      /* Body */
+      body {
+        font-family: "Poppins";
+      }
+    </style>
+    <!-- Tittle -->
+    <link rel="icon" href="/img/bic.png" type="image/png" />
+    <title>SDIT BIC</title>
+  </head>
+  <body>
+    <header
+      class="bg-transparent absolute top-0 left-0 w-full flex items-center z-[9999]"
+    >
+      <div class="container">
+        <div class="flex items-center justify-between relative">
+          <div class="px-4">
+            <a href="index.html">
+              <img
+                src="/img/bic.png"
+                alt="logo"
+                class="mt-1 mb-1 h-10 sm:h-12 md:h-16 w-auto"
+              />
+            </a>
+          </div>
+          <div class="flex items-center px-4">
+            <button
+              id="hamburger"
+              name="hamburger"
+              type="button"
+              class="block absolute right-4 lg:hidden"
+            >
+              <span
+                class="origin-top-left hamburger-line transition duration-300 ease-in-out"
+              ></span>
+              <span
+                class="hamburger-line transition duration-300 ease-in-out"
+              ></span>
+              <span
+                class="origin-bottom-left hamburger-line transition duration-300 ease-in-out"
+              ></span>
+            </button>
+            <nav
+              id="nav-menu"
+              class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:shadow-slate-500 lg:dark:bg-transparent"
+            >
+              <ul class="block lg:flex">
+                <li class="group">
+                  <a
+                    href="/index.html"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary"
+                    >Beranda</a
+                  >
+                </li>
+                <li class="group relative">
+                  <a
+                    href="#"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary"
+                    >Tentang SDIT BIC</a
+                  >
+                  <!-- Submenu -->
+                  <ul
+                    class="absolute left-0 bg-white shadow-lg opacity-0 invisible translate-y-2 transition-all duration-5 00 ease-in-out group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+                  >
+                    <li>
+                      <a
+                        href="#subitem1"
+                        class="block text-base text-dark py-2 px-4 hover:bg-gray-200"
+                        >Sejarah Sekolah</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="visimisi.html"
+                        class="block text-base text-dark py-2 px-4 hover:bg-gray-200"
+                        >Visi Misi</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#subitem3"
+                        class="block text-base text-dark py-2 px-4 hover:bg-gray-200"
+                        >Peraturan Akademik</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="/katakata.html"
+                        class="block text-base text-dark py-2 px-4 hover:bg-gray-200"
+                        >Kata-kata</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="struktur.html"
+                        class="block text-base text-dark py-2 px-4 hover:bg-gray-200"
+                        >Struktur Organisasi</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="group">
+                  <a
+                    href="prestasi.html"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary"
+                    >Prestasi</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#clients"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary"
+                    >Clients</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#blog"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary"
+                    >Blog</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="contact.html"
+                    class="flex text-base text-dark py-2 mx-8 group-hover:text-primary"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section Start -->
+    <section id="home" class="pt-[90px]">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="w-full self-end px-4 mb-14">
+            <!-- Struktur Yayasan -->
+            <div class="relative mt-10 lg:mt-9 lg:right-0">
+              <p class="flex text-center justify-center font-bold text-2xl">
+                Struktur Yayasan Bina Insan Cendekia
+              </p>
+              <a href="/img/strukturyayasan.png" target="_blank">
+                <img
+                  src="/img/strukturyayasan.png"
+                  alt="Krisnanda"
+                  class="max-w-full mx-auto h-auto rounded-xl"
+                />
+              </a>
+            </div>
+            <!-- Struktur Lembaga -->
+            <div class="relative mt-10 lg:mt-9 lg:right-0">
+              <p class="flex text-center justify-center font-bold text-2xl">
+                Struktur Lembaga SDIT Bina Insan Cendekia
+              </p>
+              <a href="/img/strukturlembaga.png" target="_blank">
+                <img
+                  src="/img/strukturlembaga.png"
+                  alt="Krisnanda"
+                  class="max-w-full mx-auto h-auto xl:h-[800px] rounded-xl"
+                />
+              </a>
+            </div>
+            <!-- Jabatan -->
+            <div
+              class="max-w-4xl mx-auto bg-white shadow-md rounded-lg overflow-hidden"
+            >
+              <table class="min-w-full border-collapse border border-gray-200">
+                <thead class="bg-gray-200">
+                  <tr>
+                    <th
+                      class="border border-gray-300 px-6 py-3 text-left text-sm font-medium text-gray-700"
+                    >
+                      Jabatan
+                    </th>
+                    <th
+                      class="border border-gray-300 px-6 py-3 text-left text-sm font-medium text-gray-700"
+                    >
+                      Nama
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="odd:bg-white even:bg-gray-50">
+                    <td
+                      class="border border-gray-300 px-6 py-3 text-sm text-gray-800"
+                    >
+                      Kepala Sekolah
+                    </td>
+                    <td
+                      class="border border-gray-300 px-6 py-3 text-sm text-gray-800"
+                    >
+                      Titik Wulandari S.Pd
+                    </td>
+                  </tr>
+                  <tr class="odd:bg-white even:bg-gray-50">
+                    <td
+                      class="border border-gray-300 px-6 py-3 text-sm text-gray-800"
+                    >
+                      Waka Kesiswaan
+                    </td>
+                    <td
+                      class="border border-gray-300 px-6 py-3 text-sm text-gray-800"
+                    >
+                      Asih Murni Astuti, SP
+                    </td>
+                  </tr>
+                  <tr class="odd:bg-white even:bg-gray-50">
+                    <td
+                      class="border border-gray-300 px-6 py-3 text-sm text-gray-800"
+                    >
+                      Waka Sarana dan Prasarana
+                    </td>
+                    <td
+                      class="border border-gray-300 px-6 py-3 text-sm text-gray-800"
+                    >
+                      Maf’ullah, S.Pd.SD
+                    </td>
+                  </tr>
+                  <tr class="odd:bg-white even:bg-gray-50">
+                    <td
+                      class="border border-gray-300 px-6 py-3 text-sm text-gray-800"
+                    >
+                      Waka Kurikulum
+                    </td>
+                    <td
+                      class="border border-gray-300 px-6 py-3 text-sm text-gray-800"
+                    >
+                      Atik Widiartiningsih, S.Si
+                    </td>
+                  </tr>
+                  <tr class="odd:bg-white even:bg-gray-50">
+                    <td
+                      class="border border-gray-300 px-6 py-3 text-sm text-gray-800"
+                    >
+                      Koordinator Al-Qur’an
+                    </td>
+                    <td
+                      class="border border-gray-300 px-6 py-3 text-sm text-gray-800"
+                    >
+                      Sya'roni, S.Pd.I
+                    </td>
+                  </tr>
+                  <tr class="odd:bg-white even:bg-gray-50">
+                    <td
+                      class="border border-gray-300 px-6 py-3 text-sm text-gray-800"
+                    >
+                      Koordinator Fase A & Guru Kelas I Al Furqon
+                    </td>
+                    <td
+                      class="border border-gray-300 px-6 py-3 text-sm text-gray-800"
+                    >
+                      Khoridatul Bahiyah, S.Pd.I
+                    </td>
+                  </tr>
+                  <tr class="odd:bg-white even:bg-gray-50">
+                    <td
+                      class="border border-gray-300 px-6 py-3 text-sm text-gray-800"
+                    >
+                      Koordinator Fase B & Guru Kelas IV As Syams
+                    </td>
+                    <td
+                      class="border border-gray-300 px-6 py-3 text-sm text-gray-800"
+                    >
+                      Esi Rosyida, S.Si, S.Pd
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Footer Start -->
+    <section id="contact">
+      <footer class="bg-dark pt-5 pb-5">
+        <div class="container">
+          <p class="text-slate-500 font-medium text-sm text-center">
+            created by <span class="text-primary">MKrisnandaVS</span>
+          </p>
+        </div>
+      </footer>
+    </section>
+    <!-- Footer End -->
+
+    <!-- Back to Top Start -->
+    <a
+      href="#home"
+      class="hidden w-14 h-14 bg-primary rounded-full fixed z-[9999] bottom-4 right-4 p-4 justify-center items-center hover:transition hover duration-300 hover:animate-pulse"
+      id="to-top"
+    >
+      <span class="block w-5 h-5 border-t-2 border-l rotate-45 mt-3"></span>
+    </a>
+    <!-- Back to Top End -->
+
+    <!-- JS -->
+    <script src="script.js"></script>
+  </body>
+</html>

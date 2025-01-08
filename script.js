@@ -30,16 +30,15 @@ window.addEventListener("click", function (e) {
   const navMenu = document.getElementById("nav-menu");
 
   if (
-    hamburger && 
-    navMenu && 
-    !hamburger.contains(e.target) && 
+    hamburger &&
+    navMenu &&
+    !hamburger.contains(e.target) &&
     !navMenu.contains(e.target)
   ) {
     hamburger.classList.remove("hamburger-active");
     navMenu.classList.add("hidden");
   }
 });
-
 
 // Darkmode Toggle
 const darkToggle = document.querySelector("#dark-toggle");
